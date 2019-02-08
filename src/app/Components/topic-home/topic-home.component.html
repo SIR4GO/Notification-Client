@@ -1,0 +1,41 @@
+<section style="margin:0" class="row">
+  <section class="topic-menu col-md-4">
+    <ul class="main-menu">
+      <li class="menu-title">
+        <h3>#Teams</h3>
+      </li>
+
+      <hr style="background-color: #66657c">
+
+
+      <li class="menu-team">
+        <a  [routerLink]="['/develop']" >
+          <img src="assets/software.png" alt="deve">
+          <section class="content">
+            <h5> Development Team </h5>
+            <small style="color:#a8a8a8">Open chat room for discussion with development team. </small>
+          </section>
+
+        </a>
+      </li>
+
+      <hr style="background-color: #66657c">
+
+      <li class="menu-team">
+        <a  [routerLink]="['/bi']"  >
+          <img src="assets/bi.png" alt="deve">
+          <section class="content">
+            <h5> Bi Team </h5>
+            <small style="color:#a8a8a8" >Open chat room for discussion with bi team. </small>
+          </section>
+        </a>
+      </li>
+      <hr style="background-color: #66657c">
+
+    </ul>
+  </section>
+  <section class="topic-chat col-md-8">
+       <router-outlet></router-outlet>
+  </section>
+</section>
+

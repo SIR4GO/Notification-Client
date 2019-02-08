@@ -1,0 +1,194 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #373351;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FFDB42;
+}
+/*#FFDB42*/
+body
+{
+  overflow: hidden;
+  position: relative;
+}
+/* start topic menu */
+.row .topic-menu
+{
+  height: 100%;
+  background-image: url(./app/photos/Layer1.png) ;
+
+}
+
+.row .topic-chat
+{
+  height: 100%;
+  background-color: #373351;
+
+}
+.row .topic-menu .main-menu
+{
+  height: 100%;
+  padding: 0;
+  list-style: none;
+  margin: 0 20px;
+}
+.row .topic-menu .main-menu .menu-title
+{
+  margin: 20px 0;
+}
+
+.row .topic-menu .main-menu .menu-title h3
+{
+  margin: 40px 0 30px 0;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.row .topic-menu .main-menu .menu-team
+{
+  margin: 12px 0 15px 0;
+  height: 80px;
+  display: flex;
+}
+
+.row .topic-menu .main-menu a
+{
+  margin: auto 0 auto 10px;
+  display: flex;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.row .topic-menu .main-menu img
+{
+  height: 70px ;
+  width:  70px;
+  margin-right: 10px;
+}
+
+.row .topic-menu .main-menu a .content
+{
+  margin-left: 30px;
+}
+.row .topic-menu .main-menu a .content h6
+{
+  margin-top: 5px;
+}
+
+/* End topic menu */
+
+
+
+
+/* start topic chat */
+.row .topic-chat
+{
+  padding: 0;
+}
+
+.row .topic-chat .chat-header
+{
+  height: 12%;
+  display: flex;
+  border-bottom: thin solid #66657c;
+
+}
+.row .topic-chat .chat-header img
+{
+  height: 50px ;
+  width:  50px;
+  margin: auto 0 auto 20px;
+}
+
+.row .topic-chat .chat-header .content
+{
+  margin: auto 0 auto 20px;
+
+}
+.row .topic-chat .chat-header .content h5
+{
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.row .topic-chat .chat-body
+{
+  height:76% ;
+  overflow-y: scroll;
+  border-bottom: thin solid #66657c;
+
+}
+
+.row .topic-chat .chat-body .message-card
+{
+
+  max-width: 40%;
+  background-color: #FFDB42;
+  border-radius: 5px;
+
+  margin: 30px 0 30px 30px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(255, 219, 60, .8);
+
+  text-align: justify;
+  text-justify: inter-word;
+  overflow-x: hidden;
+
+}
+
+
+
+
+.row .topic-chat .chat-footer
+{
+  height: 12%;
+  display: flex;
+
+}
+
+.row .topic-chat .chat-footer textarea
+{
+  width: 85%;
+  color: #ffffff;
+  border: thin solid #66657c;
+  border-radius: 20px;
+  margin: auto 0 auto 30px;
+  height: 50%;
+  background: none;
+  outline: none;
+  resize: unset;
+  padding:  8px 15px 0 10px;
+  font-size: 14px;
+}
+.row .topic-chat .chat-footer textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.row .topic-chat .chat-footer img
+{
+  height: 35px;
+  width: 35px;
+  margin: auto 0 auto 30px;
+}
+
+/* end topic chat */
+
+
+

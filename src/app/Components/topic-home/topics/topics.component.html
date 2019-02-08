@@ -1,0 +1,27 @@
+<!-- 2 components here default ,  topics (dynamic) may increased  -->
+<!-- router outlet here -->
+
+<div class="chat-header">
+  <!-- dynamic  -->
+  <img [src]="topicPhotoPath" alt="deve">
+  <section class="content">
+    <h5> {{topicTitle}} </h5>
+    <small style="color:#a8a8a8" > Online </small>
+  </section>
+
+</div>
+
+
+<div class="chat-body">
+  <!-- <div class="message-card">
+
+  </div> -->
+</div>
+
+<div class="chat-footer">
+
+  <textarea id="message" type="text" placeholder="Type your Message ...."></textarea>
+  <img  (click)="sendMessage()" id='send' class="send-btn" src="assets/send-button.png">
+</div>
+
+<!-- router outlet here -->

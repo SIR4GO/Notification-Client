@@ -1,0 +1,37 @@
+.body-background
+{
+   background-image: url("../../../assets/Layerlogin.png");
+   display: flex;
+  background-size: cover;
+}
+
+.form-card
+{
+  width: 500px;
+  height: 500px;
+  background-color: rgba(55  , 51, 81 , .5 );
+  color: #ffffff;
+  margin: auto;
+  padding: 20px;
+}
+h1
+{
+   margin: 0 auto;
+  color: #FFDB42;
+}
+.btn-edit
+{
+  background-color: #FFDB42;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inp-edit
+{
+  border: none;
+  border-radius: 0;
+
+}
