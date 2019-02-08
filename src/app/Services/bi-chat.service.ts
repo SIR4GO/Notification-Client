@@ -23,8 +23,12 @@ export class BiChatService {
         console.log('Connected: ' + frame);
 
         _this.stompClient.subscribe('/pi/all', function (message) {
-          _this.sendMessageToChatBody(message);
+            _this.sendMessageToChatBody(message);
         });
+
+        // send join message
+        const  name  = JSON.parse(localStorage.getItem('userAuth')).name + '  ';
+        _this.sendMessageToServer (name , 'Join to bi chat room' , 'join');
 
       });
 
@@ -33,33 +37,39 @@ export class BiChatService {
 
   sendMessageToChatBody( msg:any)
   {
-    const messageCard = document.createElement('DIV');
+      const messageCard = document.createElement('DIV');
 
-    console.log(msg);
-    const textNode = document.createTextNode(JSON.parse(msg.body).content);
-    messageCard.appendChild(textNode);
-    messageCard.className = 'message-card';
-    messageCard.id = '' + Math.floor(Math.random() * 10000000000);
-    const height = document.getElementsByClassName('chat-body')[0].scrollHeight;
-    console.log(height);
-    if(messageCard.innerText )
-      $('.chat-body').append(messageCard).animate({ scrollTop: height }, 'fast');
+      if (JSON.parse(msg.body).type === 'chat'){
+         messageCard.className = 'message-card';
+         const senderName = '<span style="color: #ffffff; font-style: italic" >'+ JSON.parse(msg.body).sender+ ' : '+ '</span> ';
+         messageCard.innerHTML =  senderName + '<span>'+ JSON.parse(msg.body).content +'</span>';
+      }
+      else if (JSON.parse(msg.body).type === 'join'){
+         messageCard.className = 'join-message-card';
+         messageCard.innerText = (JSON.parse(msg.body).sender + ' ' + JSON.parse(msg.body).content);
 
+      }
 
-    $('#message').val('');  // reset
+      console.log(msg);
+
+      messageCard.id = '' + Math.floor(Math.random() * 10000000000);
+      const height = document.getElementsByClassName('chat-body')[0].scrollHeight;
+      console.log(height);
+      if(messageCard.innerText )
+        $('.chat-body').append(messageCard).animate({ scrollTop: height }, 'fast');
+        $('#message').val('');  // reset
+
   }
 
-  sendMessageToServer(msg:string ) {
+  sendMessageToServer(sender:string , msgContent:string , msgType:string ) {
 
       this.stompClient.send(
         '/app/business',
         {},
-        // sender: username,
-        // content: messageInput.value,
-        // type: 'CHAT'
-        JSON.stringify({ sender:'any'  , content: msg , to:'any'})
+
+        JSON.stringify({ sender:sender  , content: msgContent , to:'any' , type: msgType })
       );
-    }
+  }
 
   disconnect()
   {

@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
     // console.log(this.password);
     this.userService.senderAuth(this.username , this.password).subscribe(
       (data) => {
-        localStorage.setItem('userAuth' , data);
-         this.router.navigate(['/']);
+        localStorage.setItem('userAuth' , JSON.stringify(data) );
+         this.router.navigate(['./']);
       } ,
       error1 => $('#error-msg').text( '*' + error1.error.message)
     );

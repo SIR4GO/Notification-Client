@@ -11,7 +11,7 @@ export class DevelopmentComponent implements OnInit , OnDestroy {
 
   topicPhotoPath:string = 'assets/software.png';
   topicTitle:string = 'Development Team';
-
+  userName:string;
 
   constructor( private  developmentChatService:DevelopmentChatService) { }
 
@@ -20,11 +20,18 @@ export class DevelopmentComponent implements OnInit , OnDestroy {
 
       $('.chat-body').html(''); // reset screen
       this.developmentChatService.connect();
+       const  cardinality  = JSON.parse(localStorage.getItem('userAuth'));
+       this.userName = cardinality.name;
   }
 
   sendMessage()
   {
-    this.developmentChatService.sendMessageToServer($('#message').val() );
+    const cardinality = JSON.parse(localStorage.getItem('userAuth'));
+    const sender = cardinality.name; // sender name
+    const msgContent = $('#message').val();
+    const msgType = "chat";
+
+    this.developmentChatService.sendMessageToServer(sender , msgContent , msgType);
   }
 
   ngOnDestroy(){

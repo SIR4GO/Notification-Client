@@ -28,6 +28,8 @@ export class ChatService {
             //console.log(message);
             _this.sendMessageToChatBody(message);
           });
+
+
         });
     }
     else if (topic === 'pi')

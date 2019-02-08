@@ -12,7 +12,7 @@ export const routes: Routes = [
     component: TopicHomeComponent,
     canActivate: [RootActivationService],
     children: [
-      // { path: "topic/:type", component: TopicsComponent },
+      // { path: "topic/:type", component: TopicsComponent }, // old scenario one component for all topics
       { path: "develop", component:  DevelopmentComponent ,  canActivate: [RootActivationService]},
       { path: "bi", component:  BiComponent ,  canActivate: [RootActivationService]}
     ]

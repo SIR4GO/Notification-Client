@@ -3,10 +3,17 @@
 
 <div class="chat-header">
   <!-- dynamic  -->
-  <img [src]="topicPhotoPath" alt="deve">
-  <section class="content">
-    <h5> {{topicTitle}} </h5>
-    <small style="color:#a8a8a8" > Online </small>
+ <div class="topic-description">
+   <img [src]="topicPhotoPath" alt="deve">
+   <section class="content">
+     <h5> {{topicTitle}} </h5>
+     <small style="color:#a8a8a8" > Online </small>
+   </section>
+ </div>
+
+  <section style="margin: auto 40px auto 0;" class="user-info">
+     <h5 style="color: #ffffff ; text-transform: capitalize" class="user-name">{{userName}}</h5>
+    <small style="color:#FFDB42" > Live </small>
   </section>
 
 </div>
