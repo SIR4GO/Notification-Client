@@ -27,6 +27,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
+              "node_modules/crypto-js/crypto-js.js"
             ]
           },
           "configurations": {

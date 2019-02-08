@@ -9,6 +9,7 @@ import { TopicsComponent } from './Components/topic-home/topics/topics.component
 import { DevelopmentComponent } from './Components/topic-home/topics/development/development.component';
 import { BiComponent } from './Components/topic-home/topics/bi/bi.component';
 import { LoginComponent } from './Components/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LoginComponent } from './Components/login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
