@@ -24,7 +24,7 @@ export class RootActivationService implements CanActivate{
                if(data.message === 'exist')
                    return true;
                else if ( data.message === 'not exist'){
-                   console
+
                    this.route.navigate(['/login']);
                    return false;
                }
