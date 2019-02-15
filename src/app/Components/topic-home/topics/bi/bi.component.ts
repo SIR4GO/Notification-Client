@@ -10,7 +10,7 @@ import {BiChatService} from '../../../../Services/bi-chat.service';
 export class BiComponent implements OnInit ,OnDestroy {
 
   topicPhotoPath:string = 'assets/bi.png';
-  topicTitle:string = 'Pi Team' ;
+  topicTitle:string = 'BI Team' ;
   userName: string;
 
   constructor(private biChatService:BiChatService) { }

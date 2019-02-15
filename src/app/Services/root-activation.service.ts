@@ -1,24 +1,39 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
+import {UserService} from './user.service';
+
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RootActivationService implements CanActivate{
 
-  constructor(private route: Router ) { }
+  constructor(private route: Router , private userService:UserService) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
-    if(state.url === '/' || state.url === '/bi' || state.url === '/develop' )
-    {
-      if(localStorage.getItem("userAuth"))
-            return true;
-    }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
 
 
-    this.route.navigate(['/login']);
-    return false;
+      let cardinality = localStorage.getItem("userAuth");
+
+      return this.userService.existSender(cardinality).pipe(
+        map (data => {
+          if(state.url = '/develop')
+          {
+               if(data.message === 'exist')
+                   return true;
+               else if ( data.message === 'not exist'){
+                   console
+                   this.route.navigate(['/login']);
+                   return false;
+               }
+
+          }
+        })
+
+      );
+
   }
+
 }

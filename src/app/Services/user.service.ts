@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as Crypto from 'crypto-js';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable , of} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class UserService {
   private  secret:string = '@#!^%sa#saf%#*JHHDAD&^*asf^%&';
 
 
-  constructor(private http:HttpClient ) { }
+  constructor(private http:HttpClient , private router:Router) { }
 
   httpOptions = {
     headers: new HttpHeaders({'content-type':'application/json'})
@@ -29,6 +30,22 @@ export class UserService {
 
   }
 
+  existSender (cardinality):Observable<any>
+  {
+    if (cardinality){
+     const token = JSON.parse(cardinality).token;
+
+      const parameters = {
+        token: token
+      };
+
+      return this.http.post('http://localhost:8080/existUser' , parameters , this.httpOptions);
+    }
+
+
+     this.router.navigate(['/login']);
+     return of(false); // return boolean observable
+  }
 
   generateEncryptedCardinality(value , key){
 
