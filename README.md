@@ -13,6 +13,6 @@ this is video illustrate Webchat client
 https://youtu.be/LTQ6iUwRPW0
 
 
-# backend 
+# backend (webchat server repository)
 
-spring boot , websocke , jwt auth 
+spring boot , websocket , jwt auth 
