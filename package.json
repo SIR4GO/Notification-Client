@@ -26,7 +26,7 @@
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
     "crypto-js": "^3.1.9-1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jquery.nicescroll": "^3.7.6",
     "ngx-scrollbar": "^4.1.1",
     "rxjs": "^6.0.0",
